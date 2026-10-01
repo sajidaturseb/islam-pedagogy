@@ -53,9 +53,11 @@
 
   function setupLesson() {
     if (!current) return;
-    document.title = `${current.n} нче дәрес — Ислам педагогикасы`;
-    $('coursePill').textContent = `${current.n} нче дәрес`;
     $('introTitle').textContent = current.title;
+    if (byNumber.has(requested)) {
+      document.title = `${current.n} нче дәрес — Ислам педагогикасы`;
+      $('coursePill').textContent = `${current.n} нче дәрес`;
+    }
   }
 
   function lessonUrl() {
