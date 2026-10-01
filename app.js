@@ -143,6 +143,7 @@
     $('openPreview').textContent = openText;
     $('sendResultBtn').disabled = false;
     $('sendResultBtn').textContent = 'Нәтиҗәне җибәрергә';
+    $('sendInstruction').innerHTML = '<strong>Сез тестны үттегез.</strong> Нәтиҗәне укытучыга җибәрү өчен «Нәтиҗәне җибәрергә» төймәсенә басыгыз.';
     $('resultSendNote').textContent = '';
     show('result');
   }
@@ -261,6 +262,7 @@
       if (!response.ok || !result.ok) throw new Error(result.error || 'send_failed');
       sent = true;
       button.textContent = 'Җибәрелде';
+      $('sendInstruction').innerHTML = '<strong>Нәтиҗә җибәрелде.</strong> Ул укытучы журналында сакланды.';
       $('resultSendNote').textContent = 'Нәтиҗә укытучы журналына җибәрелде. Башка бернәрсә эшләргә кирәкми.';
     } catch {
       button.disabled = false;
